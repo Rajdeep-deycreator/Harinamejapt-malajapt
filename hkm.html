@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    #parent {
+      background-color: RGBA(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      height: 100000000000000000px;
+      width: 700px;
+    }
+
+    #panch {
+      font-size: 30px;
+      font-style: bold;
+    }
+
+    #mala {
+      font-size: 50px;
+      width: 700px;
+    }
+
+    #submit {
+      background-color: blue;
+      border-radius: 40px;
+      height: 100px;
+      width: 200px;
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body background="sri krsna.jpg">
+  <div id="parent">
+    <input type="number" name="mala" id="mala" placeholder="no. of mala eg 1(108 times) etc">
+    <input type="submit" name="submit" id="submit" value="submit" onclick="submit()" />
+    <audio controls src="hkm.mp3" id="audio"></audio>
+    <p id="panch">jaya sri-krishna-caitanya prabhu nityananda, sri-advaita gadadhara srivasadi-gaura-bhakta-vrinda.</p>
+  </div>
+
+  <script>
+    function submit() {
+      var m = document.getElementById('mala').value;
+      var totalMantras = 0;
+      var a = parseInt(m);
+      var newdiv = document.createElement("div");
+      newdiv.style.fontSize = "40px";
+
+      document.getElementById('parent').appendChild(newdiv);
+
+      for (var b = 1; b <= a; b++) {
+        for (var i = 1; i <= 108; i++) {
+          totalMantras++;
+          newdiv.innerHTML += totalMantras + ". Hare krsna Hare krsna krsna krsna hare har Hare Ram Hare RAM RAMRAMhare hare<br> \n";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    #parent {
+      background-color: RGBA(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      height: 10000000000000000px;
+      width: 700px;
+    }
+
+    #panch {
+      font-size: 30px;
+      font-style: bold;
+    }
+
+    #mala {
+      font-size: 50px;
+      width: 700px;
+    }
+
+    #submit {
+      background-color: blue;
+      border-radius: 40px;
+      height: 100px;
+      width: 200px;
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body background="shiv.jpg">
+  <div id="parent">
+    <input type="number" name="mala" id="mala" placeholder="no. of mala eg 1(108 times) etc">
+    <input type="submit" name="submit" id="submit" value="submit" onclick="submit()" />
+    <audio controls src="mtj.mp3" id="audio"></audio>
+  </div>
+
+  <script>
+    function submit() {
+      var m = document.getElementById('mala').value;
+      var a = parseInt(m);
+      var newdiv = document.createElement("div");
+      newdiv.style.fontSize = "40px";
+      var totalmantra=0;
+
+      document.getElementById('parent').appendChild(newdiv);
+
+      for (var b = 1; b <= a; b++) {
+        for (var i = 1; i <= 108; i++) {
+          totalmantra++;
+          newdiv.innerHTML += totalmantra +".Aum Tryambakam yajaamahe sugandhim pushtivardhanam | Urvaarukamiva bandhanaan - mrityormuksheeya maamritaat || \n \n";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
